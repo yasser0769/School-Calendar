@@ -460,3 +460,73 @@ footer {
 .ltr {
   direction: ltr;
 }
+/* Static pages */
+.page {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.page-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.page-section p {
+  margin: 0 0 1rem;
+  color: var(--secondary-text);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.page-section p:last-of-type {
+  margin-bottom: 0;
+}
+
+.static-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.ksa-cal-header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.static-nav a {
+  color: var(--primary);
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  transition: background-color var(--transition-duration);
+}
+
+.static-nav a:hover,
+.static-nav a:focus-visible {
+  background-color: rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .page-section {
+    padding: 1.5rem;
+  }
+
+  .page-section p {
+    font-size: 1rem;
+  }
+}
