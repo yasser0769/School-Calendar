@@ -53,24 +53,6 @@
       <!-- Event cards will be rendered here -->
     </div>
 
-    <!-- Subscription section -->
-    <section id="subscription" style="margin-top:2rem;">
-      <h2>اشترك في التنبيهات</h2>
-      <p>أدخل بريدك الإلكتروني أو رقم واتساب ليصلك تنبيه قبل كل إجازة بمدة محددة.</p>
-      <form id="subscribe-form" style="display:flex; flex-wrap:wrap; gap:0.5rem; max-width:600px;">
-        <input type="text" id="subscriber-contact" placeholder="البريد الإلكتروني أو رقم الهاتف" required style="flex:1; padding:0.5rem; border:1px solid var(--border); border-radius:4px; background: var(--surface); color: var(--text);">
-        <input type="number" id="notify-days" min="1" value="3" required style="width:100px; padding:0.5rem; border:1px solid var(--border); border-radius:4px; background: var(--surface); color: var(--text);" aria-label="عدد الأيام قبل التنبيه">
-        <button type="submit" style="padding:0.5rem 1rem; background-color: var(--primary); color:#fff; border:none; border-radius:4px; cursor:pointer;">اشتراك</button>
-      </form>
-      <small>سيتم استخدام هذه المعلومات للتنبيه محلياً فقط ولن يتم إرسالها إلى أي جهة خارجية.</small>
-    </section>
-
-    <!-- Embed widget section -->
-    <section id="embed-widget" style="margin-top:2rem;">
-      <h2>استخدم الويدجت في موقعك</h2>
-      <p>يمكنك إدراج عداد العطلة القادمة في موقعك باستخدام الكود التالي:</p>
-      <textarea readonly style="width:100%; max-width:600px; height:120px; padding:0.5rem; border:1px solid var(--border); border-radius:4px; background: var(--surface); color: var(--text); font-family:monospace;">&lt;iframe src="{{CURRENT_URL}}#widget" style="width:100%; border:0;" title="الحدث القادم"&gt;&lt;/iframe&gt;</textarea>
-    </section>
   </main>
 
   <footer>

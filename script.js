@@ -13,27 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextEventShareBtn = document.getElementById('next-event-share');
   const nextEventIcsBtn = document.getElementById('next-event-ics');
   const themeToggleBtn = document.getElementById('theme-toggle');
-  const subscribeForm = document.getElementById('subscribe-form');
-  const subscriberContactInput = document.getElementById('subscriber-contact');
-  const notifyDaysInput = document.getElementById('notify-days');
-
-  // Replace placeholder in embed widget textarea with actual URL
-  const embedTextarea = document.querySelector('#embed-widget textarea');
-  if (embedTextarea) {
-    const currentUrl = `${location.origin}${location.pathname}`;
-    embedTextarea.textContent = embedTextarea.textContent.replace('{{CURRENT_URL}}', currentUrl);
-  }
-
   // If the page is loaded with #widget hash, show only the next event widget for embedding
   if (location.hash === '#widget') {
     document.body.style.background = 'transparent';
     document.querySelector('header').style.display = 'none';
     document.querySelector('.search-container').style.display = 'none';
     document.getElementById('events-list').style.display = 'none';
-    const subscriptionSection = document.getElementById('subscription');
-    if (subscriptionSection) subscriptionSection.style.display = 'none';
-    const embedSection = document.getElementById('embed-widget');
-    if (embedSection) embedSection.style.display = 'none';
     document.querySelector('footer').style.display = 'none';
     // Remove padding from main
     document.querySelector('main').style.padding = '0';
@@ -502,30 +487,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNextEventWidget();
   });
   themeToggleBtn.addEventListener('click', toggleTheme);
-
-  // Subscription form handler
-  if (subscribeForm) {
-    subscribeForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const contact = subscriberContactInput.value.trim();
-      const daysBefore = parseInt(notifyDaysInput.value, 10);
-      if (!contact || isNaN(daysBefore) || daysBefore <= 0) {
-        showToast('يرجى إدخال معلومات صحيحة');
-        return;
-      }
-      // Retrieve existing subscribers from localStorage
-      let subs = [];
-      try {
-        subs = JSON.parse(localStorage.getItem('subscribers') || '[]');
-      } catch (err) {
-        subs = [];
-      }
-      subs.push({ contact, daysBefore });
-      localStorage.setItem('subscribers', JSON.stringify(subs));
-      showToast('تم الاشتراك بنجاح!');
-      subscribeForm.reset();
-    });
-  }
 
   // Initial rendering
   renderYearNav();
