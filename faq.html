@@ -1,47 +1,299 @@
+<!-- File: faq.html | Created: 2025-10-31 -->
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الأسئلة الشائعة – التقويم الدراسي السعودي</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الأسئلة الشائعة | التقويم الدراسي السعودي</title>
+  <meta name="description" content="إجابات مختصرة لأبرز الأسئلة حول الجداول والإجازات وتحديثات الوزارة.">
+  <link rel="canonical" href="https://school-calender.netlify.app/faq.html">
+  <meta property="og:title" content="الأسئلة الشائعة | التقويم الدراسي السعودي">
+  <meta property="og:description" content="اطلع على إجابات موجزة حول الجداول الدراسية، الإجازات، وآلية تحديث بيانات التقويم الدراسي السعودي.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://school-calender.netlify.app/faq.html">
+  <meta property="og:locale" content="ar_SA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- GA_PLACEHOLDER: ضع كود Google Analytics هنا لاحقًا -->
+  <style>
+    :root {
+      color-scheme: light;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Sans Arabic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
+      color: #0f172a;
+      line-height: 1.7;
+    }
+    a {
+      color: #0f766e;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .notice {
+      background-color: #fef3c7;
+      color: #92400e;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+    .top-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem 1.25rem;
+    }
+    .brand {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      font-weight: 600;
+    }
+    main {
+      background-color: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      padding: 2.5rem 2rem;
+      margin-top: -1.5rem;
+    }
+    h1 {
+      color: #0f172a;
+      margin-top: 0;
+      font-weight: 700;
+    }
+    .faq-list {
+      display: grid;
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+    .faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1.5rem;
+      background-color: #f8fafc;
+    }
+    .faq-item h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .faq-item p {
+      margin: 0;
+      color: #334155;
+    }
+    footer {
+      background-color: #0f172a;
+      color: #e2e8f0;
+      padding: 2rem 1.25rem;
+      margin-top: 3rem;
+    }
+    .footer-content {
+      max-width: 880px;
+      margin: 0 auto;
+      display: grid;
+      gap: 0.75rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+    }
+    .footer-links a {
+      color: #bae6fd;
+      font-weight: 500;
+    }
+    @media (max-width: 640px) {
+      main {
+        padding: 2rem 1.5rem;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="notice">الموقع مرجع مساعد، والمصدر النهائي هو وزارة التعليم.</div>
   <header>
-    <div class="brand"><a href="index.html">التقويم الدراسي السعودي</a></div>
-    <nav></nav>
-    <div class="actions"></div>
+    <div class="top-bar container">
+      <div class="brand">التقويم الدراسي السعودي</div>
+      <nav aria-label="التنقل الرئيسي">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">اتصل بنا</a>
+        <a href="faq.html" aria-current="page">الأسئلة الشائعة</a>
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="terms.html">الشروط والأحكام</a>
+        <a href="disclaimer.html">إخلاء المسؤولية</a>
+        <a href="cookies.html">سياسة الكوكيز</a>
+        <a href="sitemap.html">خريطة الموقع</a>
+      </nav>
+    </div>
   </header>
-  <main>
+  <main class="container">
     <h1>الأسئلة الشائعة</h1>
-    <section>
-      <h2>من أين تم الحصول على بيانات التقويم؟</h2>
-      <p>تم بناء هذا الموقع اعتماداً على البيانات المنشورة من قبل وزارة التعليم السعودية حول التقويم الدراسي للأعوام 1447–1451هـ. يمكن الاطلاع على الخبر الأصلي المنشور في صحيفة <a href="https://ajel.sa/thehour/ja9nxcjgg6" target="_blank" rel="noopener">عاجل</a> للتأكد من صحة المواعيد【206949658446722†L34-L43】.</p>
-    </section>
-    <section>
-      <h2>كيف يتم حساب المدة والعد التنازلي؟</h2>
-      <p>يتم استخدام التواريخ الميلادية لإجراء العمليات الحسابية بدقة أكبر. يُحسب عدد الأيام بين تاريخ البداية والنهاية شاملةً لكلا اليومين، أما العد التنازلي فيُحدث تلقائياً كل ثانية بناءً على توقيت آسيا/الرياض.</p>
-    </section>
-    <section>
-      <h2>هل تتغير الإجازات أو المواعيد؟</h2>
-      <p>قد تقوم وزارة التعليم بتعديل التقويم الدراسي أو إعادة جدولة الإجازات في أي وقت. لذلك يُنصح دائماً بزيارة الموقع الرسمي للوزارة أو متابعة المصادر الموثوقة للتأكد من أحدث التعديلات.</p>
-    </section>
-    <section>
-      <h2>ما هي معايير الوصول المستخدمة في هذا الموقع؟</h2>
-      <p>تمت مراعاة <a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html" target="_blank" rel="noopener">إرشادات الوصول العالمية</a>، حيث تم استخدام تباين لوني مرتفع لتحقيق قراءة واضحة للنصوص. ينص المعيار على أن نسبة التباين بين النص والخلفية يجب أن تكون على الأقل 7:1 للنصوص العادية و4.5:1 للنصوص الكبيرة【762221658634657†L40-L47】.</p>
-    </section>
-    <section>
-      <h2>كيف أضيف حدثاً إلى تقويم Google أو Apple؟</h2>
-      <p>يحتوي كل حدث في الموقع على زر “إضافة”. عند الضغط عليه يُحمل ملف ‎‎<code>.ics</code>‎‎ يحتوي على تفاصيل الحدث (الاسم، التاريخ، الوصف). يمكن فتح الملف في تطبيق التقويم المفضل لديك ليتم إضافته مباشرة.</p>
-    </section>
-    <section>
-      <h2>هل أستطيع مشاركة الإجازات مع الأصدقاء؟</h2>
-      <p>نعم، يوجد لكل حدث زر مشاركة يقوم بإنشاء رسالة مهيأة لإرسالها عبر واتساب تشمل اسم الحدث وتاريخه ورابط الحدث.</p>
-    </section>
+    <p>جمعنا لك أبرز الأسئلة التي نتلقاها من المعلمين والطلاب وأولياء الأمور حول التقويم الدراسي في السعودية، مع إجابات مختصرة وواضحة.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h2>كيف أعرف مواعيد الإجازات الرسمية لكل فصل؟</h2>
+        <p>نحدّث صفحات الجداول بمجرد صدور تقويم الوزارة الرسمي، وستجد جدولًا مفصلاً لكل فصل يتضمن الإجازات المطوّلة والرسمية.</p>
+      </div>
+      <div class="faq-item">
+        <h2>هل تعتمدون بيانات الوزارة مباشرة؟</h2>
+        <p>نعم، نستند إلى الإعلانات الصادرة عن وزارة التعليم ونضيف توضيحات مبسطة لتسهيل تتبع التغييرات.</p>
+      </div>
+      <div class="faq-item">
+        <h2>كيف يتم حساب الأسابيع الدراسية؟</h2>
+        <p>نحتسب الأسابيع بناءً على تقويم الوزارة الرسمي، مع توضيح الأسابيع الدراسية الفعلية والأسابيع الخاصة بالاختبارات.</p>
+      </div>
+      <div class="faq-item">
+        <h2>هل يتم إشعارنا عند تحديثات الوزارة؟</h2>
+        <p>ننشر إشعارات داخل الموقع وعبر قنوات التواصل عند إضافة أي تحديث مهم، ويمكنك متابعة تيليجرام للاطلاع على أحدث المستجدات.</p>
+      </div>
+      <div class="faq-item">
+        <h2>هل تدعمون التقويم الهجري والميلادي معًا؟</h2>
+        <p>نعم، نعرض التواريخ بالهجري والميلادي لتسهيل التخطيط بين المناسبات الرسمية والدراسية.</p>
+      </div>
+      <div class="faq-item">
+        <h2>كيف أقدّم اقتراحًا أو أبلّغ عن خطأ؟</h2>
+        <p>يمكنك التواصل معنا عبر البريد <a href="mailto:yasser0769@gmail.com">yasser0769@gmail.com</a> أو تيليجرام <a href="https://t.me/yasser0769">yasser0769</a>، وسنعمل على مراجعة ملاحظتك بسرعة.</p>
+      </div>
+      <div class="faq-item">
+        <h2>هل الموقع مجاني بالكامل؟</h2>
+        <p>نعم، جميع صفحات التقويم الدراسي السعودي متاحة للزوار دون أي رسوم أو إعلانات تجارية.</p>
+      </div>
+      <div class="faq-item">
+        <h2>هل يمكنني تنزيل الجداول كملف؟</h2>
+        <p>نحن نعمل على إتاحة ملفات قابلة للتنزيل في التحديثات القادمة. حتى ذلك الحين يمكنك حفظ الصفحة أو طباعتها بسهولة.</p>
+      </div>
+    </div>
   </main>
   <footer>
-    <p>جميع الحقوق محفوظة © 2025-2029.</p>
+    <div class="footer-content">
+      <div>© التقويم الدراسي السعودي 1447–1450 – جميع الحقوق محفوظة.</div>
+      <div>البريد: <a href="mailto:yasser0769@gmail.com">yasser0769@gmail.com</a> · تيليجرام: <a href="https://t.me/yasser0769">yasser0769</a> · أبها – المنسك</div>
+      <div class="footer-links">
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="cookies.html">سياسة الكوكيز</a>
+        <a href="terms.html">الشروط والأحكام</a>
+        <a href="sitemap.html">خريطة الموقع</a>
+      </div>
+    </div>
   </footer>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "التقويم الدراسي السعودي",
+    "url": "https://school-calender.netlify.app/",
+    "email": "yasser0769@gmail.com",
+    "sameAs": [
+      "https://t.me/yasser0769"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "أبها – المنسك",
+      "addressCountry": "SA"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "كيف أعرف مواعيد الإجازات الرسمية لكل فصل؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نحدّث صفحات الجداول بمجرد صدور تقويم الوزارة الرسمي، وستجد جدولًا مفصلاً لكل فصل يتضمن الإجازات المطوّلة والرسمية."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل تعتمدون بيانات الوزارة مباشرة؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، نستند إلى الإعلانات الصادرة عن وزارة التعليم ونضيف توضيحات مبسطة لتسهيل تتبع التغييرات."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف يتم حساب الأسابيع الدراسية؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نحتسب الأسابيع بناءً على تقويم الوزارة الرسمي، مع توضيح الأسابيع الدراسية الفعلية والأسابيع الخاصة بالاختبارات."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يتم إشعارنا عند تحديثات الوزارة؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ننشر إشعارات داخل الموقع وعبر قنوات التواصل عند إضافة أي تحديث مهم، ويمكنك متابعة تيليجرام للاطلاع على أحدث المستجدات."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل تدعمون التقويم الهجري والميلادي معًا؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، نعرض التواريخ بالهجري والميلادي لتسهيل التخطيط بين المناسبات الرسمية والدراسية."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف أقدّم اقتراحًا أو أبلّغ عن خطأ؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "يمكنك التواصل معنا عبر البريد yasser0769@gmail.com أو تيليجرام yasser0769، وسنعمل على مراجعة ملاحظتك بسرعة."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل الموقع مجاني بالكامل؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، جميع صفحات التقويم الدراسي السعودي متاحة للزوار دون أي رسوم أو إعلانات تجارية."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يمكنني تنزيل الجداول كملف؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعمل على إتاحة ملفات قابلة للتنزيل في التحديثات القادمة. حتى ذلك الحين يمكنك حفظ الصفحة أو طباعتها بسهولة."
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
