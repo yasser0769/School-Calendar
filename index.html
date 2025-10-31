@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التقويم الدراسي السعودي للأعوام 1447–1451هـ</title>
+  <meta name="description" content="تعرف على مواعيد بداية ونهاية العام الدراسي والإجازات الرسمية في السعودية للأعوام 1447–1451هـ (2025–2029م)، مع عد تنازلي وإضافة للتقويم.">
+  <meta name="keywords" content="التقويم الدراسي, التقويم المدرسي, إجازات المدارس السعودية, مواعيد العطل 1447, مواعيد العطل 1448, مواعيد العطل 1449, مواعيد العطل 1450, وزارة التعليم السعودية">
+  <meta name="author" content="وزارة التعليم">
+  <meta property="og:title" content="التقويم الدراسي السعودي للأعوام 1447–1451هـ">
+  <meta property="og:description" content="واجهة تفاعلية تعرض جميع الإجازات المدرسية في السعودية مع التواريخ الهجرية والميلادية وعد تنازلي لكل مناسبة.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:url" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Schema.org structured data will be injected dynamically by script.js -->
+</head>
+<body>
+  <header>
+    <div class="brand">التقويم الدراسي السعودي</div>
+    <nav id="year-nav" aria-label="اختر السنة">
+      <!-- Year buttons will be populated via JS -->
+    </nav>
+    <div class="actions">
+      <button id="theme-toggle" aria-label="تبديل الوضع (فاتح/داكن)">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="next-event-widget" aria-labelledby="next-event-title">
+      <div class="info">
+        <h2 id="next-event-title">العطلة القادمة</h2>
+        <p id="next-event-name">—</p>
+        <p id="next-event-dates">—</p>
+      </div>
+      <div class="countdown" id="next-event-countdown">—</div>
+      <div class="actions">
+        <button class="share" id="next-event-share" aria-label="مشاركة عبر واتساب">مشاركة</button>
+        <button class="ics" id="next-event-ics" aria-label="إضافة إلى التقويم">إضافة</button>
+      </div>
+    </section>
+
+    <section class="search-container" aria-label="البحث عن حدث">
+      <input type="search" id="search-input" placeholder="ابحث عن حدث أو تاريخ (مثال: اليوم الوطني أو 24/08/2025)" aria-label="حقل البحث">
+      <button id="clear-search">إعادة تعيين</button>
+    </section>
+
+    <div class="events-list" id="events-list">
+      <!-- Event cards will be rendered here -->
+    </div>
+
+    <!-- Subscription section -->
+    <section id="subscription" style="margin-top:2rem;">
+      <h2>اشترك في التنبيهات</h2>
+      <p>أدخل بريدك الإلكتروني أو رقم واتساب ليصلك تنبيه قبل كل إجازة بمدة محددة.</p>
+      <form id="subscribe-form" style="display:flex; flex-wrap:wrap; gap:0.5rem; max-width:600px;">
+        <input type="text" id="subscriber-contact" placeholder="البريد الإلكتروني أو رقم الهاتف" required style="flex:1; padding:0.5rem; border:1px solid var(--border); border-radius:4px; background: var(--surface); color: var(--text);">
+        <input type="number" id="notify-days" min="1" value="3" required style="width:100px; padding:0.5rem; border:1px solid var(--border); border-radius:4px; background: var(--surface); color: var(--text);" aria-label="عدد الأيام قبل التنبيه">
+        <button type="submit" style="padding:0.5rem 1rem; background-color: var(--primary); color:#fff; border:none; border-radius:4px; cursor:pointer;">اشتراك</button>
+      </form>
+      <small>سيتم استخدام هذه المعلومات للتنبيه محلياً فقط ولن يتم إرسالها إلى أي جهة خارجية.</small>
+    </section>
+
+    <!-- Embed widget section -->
+    <section id="embed-widget" style="margin-top:2rem;">
+      <h2>استخدم الويدجت في موقعك</h2>
+      <p>يمكنك إدراج عداد العطلة القادمة في موقعك باستخدام الكود التالي:</p>
+      <textarea readonly style="width:100%; max-width:600px; height:120px; padding:0.5rem; border:1px solid var(--border); border-radius:4px; background: var(--surface); color: var(--text); font-family:monospace;">&lt;iframe src="{{CURRENT_URL}}#widget" style="width:100%; border:0;" title="الحدث القادم"&gt;&lt;/iframe&gt;</textarea>
+    </section>
+  </main>
+
+  <footer>
+    <p>هذا الموقع للاستخدام التعليمي فقط، تم تطويره بالاعتماد على بيانات وزارة التعليم للسنوات 1447–1451هـ.</p>
+    <p>المصدر: <a href="https://ajel.sa/thehour/ja9nxcjgg6" target="_blank" rel="noopener">صحيفة عاجل – مواعيد بداية العام الدراسي</a>، <a href="https://www.w3.org/TR/alreq/" target="_blank" rel="noopener">W3C Arabic Layout Requirements</a>، <a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html" target="_blank" rel="noopener">معيار تباين الألوان (WCAG)</a>, <a href="https://schema.org/Event" target="_blank" rel="noopener">Schema.org Event</a>.</p>
+  </footer>
+
+  <script src="events.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
