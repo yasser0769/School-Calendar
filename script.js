@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     years.forEach(yr => {
       const btn = document.createElement('button');
       btn.textContent = yr;
+      btn.classList.add('year');
       btn.classList.toggle('active', yr === selectedYear);
       btn.addEventListener('click', () => {
         if (selectedYear !== yr) {
