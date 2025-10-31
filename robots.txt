@@ -1,0 +1,4 @@
+# File: robots.txt | Created: 2025-10-31
+User-agent: *
+Allow: /
+Sitemap: https://school-calender.netlify.app/sitemap.xml
