@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>مولّد أيقونات التقويم الدراسي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      background: #f5f7fa;
+      color: #0f2936;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.8;
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #0f4c75;
+      text-align: center;
+    }
+    .panel {
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(15, 76, 117, 0.1);
+      padding: 1.5rem;
+      margin: 0 auto;
+      max-width: 720px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-block: 1rem 0;
+    }
+    button {
+      background: #0f4c75;
+      color: #ffffff;
+      border: none;
+      border-radius: 0.75rem;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(15, 76, 117, 0.25);
+    }
+    button:active {
+      transform: translateY(1px);
+      box-shadow: none;
+    }
+    button:disabled {
+      background: #b1c6d4;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    canvas {
+      display: block;
+      margin: 1rem auto;
+      border-radius: 1.5rem;
+      box-shadow: inset 0 0 0 1px rgba(15, 76, 117, 0.15);
+      max-width: min(320px, 100%);
+    }
+    textarea {
+      width: 100%;
+      min-height: 200px;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(15, 76, 117, 0.25);
+      padding: 1rem;
+      direction: ltr;
+      font-family: 'IBM Plex Sans Arabic', monospace;
+      font-size: 0.85rem;
+      display: none;
+    }
+    textarea:focus {
+      outline: 2px solid #0f4c75;
+    }
+    .status {
+      background: #e8f3fb;
+      color: #0f4c75;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .note {
+      font-size: 0.9rem;
+      color: #406882;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>توليد أيقونات PNG من ملف SVG</h1>
+    <p>يقرأ هذا النموذج الملف <code>icon.svg</code>، ويعرض معاينة مباشرة، ثم يمكنك تنزيل نسخ PNG بالأحجام المطلوبة. إذا تعذّر التحميل التلقائي (خصوصًا عند فتح الملف محليًا)، ستظهر خانة للصق محتوى SVG يدويًا.</p>
+
+    <div class="status" id="status">جاري تحميل <code>icon.svg</code>…</div>
+    <textarea id="svg-input" aria-label="محتوى SVG"></textarea>
+    <canvas id="preview" width="256" height="256" role="img" aria-label="معاينة الأيقونة"></canvas>
+
+    <div class="actions">
+      <button data-size="192">تصدير 192×192</button>
+      <button data-size="256">تصدير 256×256</button>
+      <button data-size="384">تصدير 384×384</button>
+      <button data-size="512">تصدير 512×512</button>
+    </div>
+
+    <p class="note">بعد تنزيل الملفات، ضعها في نفس المجلد <code>/icons/</code> بجانب هذا الملف.</p>
+  </div>
+
+  <script>
+    const statusEl = document.getElementById('status');
+    const svgInput = document.getElementById('svg-input');
+    const canvas = document.getElementById('preview');
+    const ctx = canvas.getContext('2d');
+    let svgText = '';
+
+    async function loadSVG() {
+      try {
+        const response = await fetch('icon.svg', { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+        svgText = await response.text();
+        svgInput.value = svgText;
+        statusEl.textContent = 'تم تحميل الملف بنجاح. يمكن تعديل النص أدناه إذا رغبت.';
+        svgInput.style.display = 'block';
+        renderPreview();
+      } catch (error) {
+        statusEl.textContent = 'تعذّر جلب الملف تلقائيًا. انسخ محتوى icon.svg إلى الخانة التالية يدويًا:';
+        svgInput.style.display = 'block';
+        svgInput.focus();
+      }
+    }
+
+    function renderPreview(size = 256) {
+      const source = svgInput.value.trim();
+      if (!source) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+      }
+      const blob = new Blob([source], { type: 'image/svg+xml' });
+      const url = URL.createObjectURL(blob);
+      const img = new Image();
+      img.onload = () => {
+        URL.revokeObjectURL(url);
+        canvas.width = size;
+        canvas.height = size;
+        ctx.clearRect(0, 0, size, size);
+        ctx.drawImage(img, 0, 0, size, size);
+      };
+      img.onerror = () => {
+        URL.revokeObjectURL(url);
+        statusEl.textContent = 'حدث خطأ أثناء قراءة SVG. تأكد من صحة المحتوى.';
+      };
+      img.src = url;
+    }
+
+    function downloadPNG(size) {
+      renderPreview(size);
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.download = `icon-${size}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        statusEl.textContent = `تم إنشاء ملف icon-${size}.png. ستجده في مجلد التنزيلات.`;
+        renderPreview();
+      }, 100);
+    }
+
+    document.querySelectorAll('button[data-size]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!svgInput.value.trim()) {
+          statusEl.textContent = 'أضف محتوى SVG قبل التصدير.';
+          svgInput.focus();
+          return;
+        }
+        downloadPNG(Number(button.dataset.size));
+      });
+    });
+
+    svgInput.addEventListener('input', () => {
+      statusEl.textContent = 'تم تحديث المعاينة بناءً على المحتوى الحالي.';
+      renderPreview();
+    });
+
+    loadSVG();
+  </script>
+</body>
+</html>
