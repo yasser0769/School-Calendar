@@ -145,6 +145,43 @@ header .actions {
   gap: 0.5rem;
 }
 
+#install-container {
+  display: flex;
+  align-items: center;
+}
+
+.install-button {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.install-button:hover,
+.install-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.install-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.ios-install-tip {
+  background: rgba(15, 76, 117, 0.1);
+  color: var(--primary);
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
 .ksa-cal-header {
   display: flex;
   flex: 1;
