@@ -4,7 +4,6 @@ const OFFLINE_URLS = [
   '/index.html',
   '/style.css',
   '/script.js',
-  '/install.js',
   '/events.js',
   '/manifest.webmanifest'
 ];
