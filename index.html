@@ -36,14 +36,8 @@
     </header>
     <div class="actions">
       <button id="theme-toggle" aria-label="تبديل الوضع (فاتح/داكن)">🌙</button>
-      <div id="install-container" hidden>
-        <button id="install-button" class="install-button pwa-install-btn" type="button" aria-label="تثبيت كتطبيق"></button>
-      </div>
     </div>
   </header>
-  <div id="ios-install-tip" class="ios-install-tip" hidden>
-    <strong>لتثبيت الموقع على أجهزة iOS:</strong> افتح قائمة المشاركة ثم اختر <em>إضافة إلى الشاشة الرئيسية</em>.
-  </div>
 
   <main>
     <section class="next-event-widget" aria-labelledby="next-event-title">
@@ -76,7 +70,6 @@
   </footer>
 
   <script src="events.js"></script>
-  <script src="install.js" defer></script>
   <script src="script.js" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
