@@ -16,7 +16,9 @@
   <meta property="og:url" content="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <meta name="theme-color" content="#0f4c75">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="apple-touch-icon" href="/icons/icon-192.png">
@@ -27,19 +29,21 @@
   <!-- Schema.org structured data will be injected dynamically by script.js -->
 </head>
 <body>
-  <header>
-    <header class="ksa-cal-header" dir="rtl">
-      <h1 class="ksa-cal-title">التقويم الدراسي السعودي</h1>
-      <nav id="year-nav" class="ksa-cal-years" aria-label="اختر السنة">
-        <!-- Year buttons will be populated via JS -->
-      </nav>
-    </header>
-    <div class="actions">
-      <button id="theme-toggle" aria-label="تبديل الوضع (فاتح/داكن)">🌙</button>
+  <header class="site-header">
+    <div class="site-header-inner container" dir="rtl">
+      <div class="ksa-cal-header">
+        <h1 class="ksa-cal-title">التقويم الدراسي السعودي</h1>
+        <nav id="year-nav" class="ksa-cal-years" aria-label="اختر السنة">
+          <!-- Year buttons will be populated via JS -->
+        </nav>
+      </div>
+      <div class="actions">
+        <button id="theme-toggle" aria-label="تبديل الوضع (فاتح/داكن)">🌙</button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main class="container">
     <section class="next-event-widget" aria-labelledby="next-event-title">
       <div class="info">
         <h2 id="next-event-title">العطلة القادمة</h2>
